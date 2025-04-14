@@ -24,15 +24,15 @@ const Countries = ({ countriesPromise }) => {
 
   return (
     <div className="text-center max-w-96 sm:max-w-none mx-auto">
-      <div className="sticky top-0 z-10 bg-[#242424] py-4">
-        <h1 className="text-3xl font-bold mb-1">
+      <div className="sticky top-0 z-10 bg-[#242424] py-5">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2">
           Total Countries : {countries.length - visitedCountries.length}
         </h1>
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl sm:text-3xl font-bold">
           Countries Visited : {visitedCountries.length}
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
         {countries.map((country) => (
           <CountryCard
             key={country.cca2}
