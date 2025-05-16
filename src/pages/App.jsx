@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Countries from "./components/Countries";
+import Countries from "../components/Countries";
 
 const fetchCountriesPromise = async (link) => {
   const res = await fetch(link);
@@ -12,7 +12,7 @@ function App() {
   );
   return (
     <div className="grid place-content-center min-h-screen px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 container mx-auto">
-      <Suspense fallback={<h2 className="text-3xl font-bold">Loading...</h2>}>
+      <Suspense fallback={<h2 className="text-4xl font-bold">Loading...</h2>}>
         <Countries countriesPromise={countriesPromise}></Countries>
       </Suspense>
     </div>

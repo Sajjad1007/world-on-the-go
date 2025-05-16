@@ -1,15 +1,15 @@
-import React, { use, useState } from "react";
+import { use, useState } from "react";
 import CountryCard from "./CountryCard";
 
 const Countries = ({ countriesPromise }) => {
   const countries = use(countriesPromise);
+  const [visitedCountries, setVisitedCountries] = useState([]);
+
   countries.sort((country1, country2) => {
     return country1.name.common.localeCompare(country2.name.common, undefined, {
       sensitivity: "accent",
     });
   });
-
-  const [visitedCountries, setVisitedCountries] = useState([]);
 
   const handleVisitedCountries = (country) => {
     const newVisitedCountries = [...visitedCountries, country];
